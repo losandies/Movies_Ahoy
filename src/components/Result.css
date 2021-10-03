@@ -1,0 +1,28 @@
+img {
+	max-width: 150px;
+	max-height: 250px;
+	border: 1px solid white;
+}
+
+.movie-card {
+	margin: 50px;
+	max-width: 150px;
+	max-height: 350px;
+}
+
+.title {
+	font-size: 16;
+	color: white;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.no-image {
+	width: 150px;
+	height: 200px;
+	max-height: 350;
+	color: white;
+	background-color: gray;
+	border: 1px solid white;
+}
