@@ -1,48 +1,56 @@
 import React from 'react';
+import { NavDropdown, Navbar, Nav, Container } from 'react-bootstrap';
 import './Header.css';
 
 const Header = ({ handleGenreSelect }) => {
+	const categoryData = [
+		{
+			title: 'Action/Adventure',
+			id: 28,
+		},
+		{
+			title: 'Comedy',
+			id: 35,
+		},
+		{
+			title: 'Drama',
+			id: 18,
+		},
+		{
+			title: 'Thriller',
+			id: 53,
+		},
+		{
+			title: 'Horror',
+			id: 27,
+		},
+	];
+
 	return (
-		<div className="header">
-			<ul className="categories">
-				<li
-					className="genre"
-					value={28}
-					onClick={(e) => handleGenreSelect(e.target.value)}
-				>
-					Action/Adventure
-				</li>
-				<li
-					className="genre"
-					value={35}
-					onClick={(e) => handleGenreSelect(e.target.value)}
-				>
-					Comedy
-				</li>
-				<li
-					className="genre"
-					value={18}
-					onClick={(e) => handleGenreSelect(e.target.value)}
-				>
-					Drama
-				</li>
-				<li
-					className="genre"
-					value={53}
-					onClick={(e) => handleGenreSelect(e.target.value)}
-				>
-					Thriller
-				</li>
-				<li
-					className="genre"
-					value={27}
-					onClick={(e) => handleGenreSelect(e.target.value)}
-					handleGenreSelect
-				>
-					Horror
-				</li>
-				{/* <li className="genre">More...</li> */}
-			</ul>
+		<div className="navbar">
+			<Navbar variant="dark" bg="transparent" expand="lg" className="navbar">
+				<Container fluid>
+					<Navbar.Brand href="#home">MOVIES A'HOY</Navbar.Brand>
+					<Navbar.Toggle aria-controls="navbar-dark-example" />
+					<Navbar.Collapse id="navbar-dark-example">
+						<Nav>
+							<NavDropdown
+								id="nav-dropdown-dark-example"
+								title="Genres"
+								menuVariant="dark"
+							>
+								{categoryData.map(({ title, id }) => (
+									<NavDropdown.Item
+										onClick={() => handleGenreSelect(id, title)}
+									>
+										{title}
+									</NavDropdown.Item>
+								))}
+							</NavDropdown>
+						</Nav>
+					</Navbar.Collapse>
+				</Container>
+			</Navbar>
 		</div>
 	);
 };

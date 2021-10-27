@@ -1,16 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SearchBar.css';
+import SearchIcon from '@mui/icons-material/Search';
 
 const SearchBar = ({ handleSearch, displaySearchResults }) => {
 	return (
-		<div className="search-area">
+		<form
+			className="search-container"
+			onSubmit={(e) => {
+				e.preventDefault();
+				displaySearchResults();
+			}}
+		>
 			<input
-				type="text"
+				type="search"
 				className="search-bar"
+				placeholder="Search Movies"
 				onChange={(e) => handleSearch(e.target.value)}
 			/>
-			<button onClick={displaySearchResults}>Search</button>
-		</div>
+			{/* <button onClick={displaySearchResults}>Search</button> */}
+			<SearchIcon
+				className="search-icon"
+				color="disabled"
+				onClick={displaySearchResults}
+			/>
+		</form>
 	);
 };
 

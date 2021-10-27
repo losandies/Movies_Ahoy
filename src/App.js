@@ -1,8 +1,7 @@
 import './App.css';
 import Header from './components/Header';
 import Result from './components/Result';
-import SearchBar from './components/SearchBar';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import ResultArea from './components/ResultArea';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -11,6 +10,7 @@ function App() {
 	const [movies, setMovies] = useState([]);
 	const [searchInput, setSearchInput] = useState('spider');
 	const [genre, setGenre] = useState('');
+	const [genreTitle, setGenreTitle] = useState('');
 
 	const API_SEARCH_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchInput}`;
 	const API_GENRE = `https://api.themoviedb.org/3/discover/movie?api_key=22701a046650518975b9defab51561ae&with_genres=${genre}`;
@@ -30,11 +30,12 @@ function App() {
 	};
 
 	useEffect(() => {
-		handleGenreSelect(genre);
-	}, [genre]);
+		handleGenreSelect(genre, genreTitle);
+	}, [genre, genreTitle]);
 
-	const handleGenreSelect = (genreID) => {
+	const handleGenreSelect = (genreID, genreTitle) => {
 		setGenre(genreID);
+		setGenreTitle(genreTitle);
 
 		fetch(API_GENRE)
 			.then((res) => res.json())
@@ -45,33 +46,18 @@ function App() {
 			.catch((err) => {
 				console.log(err);
 			});
-
-		// const displayCategory = (genreID) => {
-		// 	const API_GENRE = `https://api.themoviedb.org/3/discover/movie?api_key=22701a046650518975b9defab51561ae&with_genres=${genre}`;
-
-		// 	fetch(API_GENRE)
-		// 		.then((res) => res.json())
-		// 		.then((data) => {
-		// 			setMovies(data.results);
-		// 		})
-		// 		.catch((err) => {
-		// 			console.log(err);
-		// 		});
-		// };
 	};
-
-	// handleGenreSelect={handleGenreSelect}
-	// displayCategory={displayCategory}
 
 	return (
 		<div className="app">
 			<Header handleGenreSelect={handleGenreSelect} />
-			<SearchBar
-				displaySearchResults={displaySearchResults}
-				handleSearch={handleSearch}
-			/>
+
 			<div className="content-area">
-				<ResultArea>
+				<ResultArea
+					currentGenre={genreTitle}
+					displaySearchResults={displaySearchResults}
+					handleSearch={handleSearch}
+				>
 					{movies.map((movie) => {
 						return <Result key={movie.id} {...movie} />;
 					})}
