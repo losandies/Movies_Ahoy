@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './components/Header';
 import Result from './components/Result';
+// import Modal from './components/Modal';
 import React, { useState, useEffect } from 'react';
 import ResultArea from './components/ResultArea';
 
@@ -11,6 +12,7 @@ function App() {
 	const [searchInput, setSearchInput] = useState('spider');
 	const [genre, setGenre] = useState('');
 	const [genreTitle, setGenreTitle] = useState('');
+	const [showModal, setShowModal] = useState(false);
 
 	const API_SEARCH_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchInput}`;
 	const API_GENRE = `https://api.themoviedb.org/3/discover/movie?api_key=22701a046650518975b9defab51561ae&with_genres=${genre}`;
