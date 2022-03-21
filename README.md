@@ -4,5 +4,5 @@ This is a movie search engine that I built using React.js in conjunction with Th
 
 In this app you will be able to either search for movies using the search bar, or select from the list of movie genres.
 
-[Live Demo(https://losandies.github.io/movie-search-app/)
+[Live Demo(https://losandies.github.io/movie-search-app/)]
 
