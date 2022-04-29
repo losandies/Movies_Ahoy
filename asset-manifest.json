@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/Movies_Ahoy/static/css/main.72c5129b.chunk.css",
-    "main.js": "/Movies_Ahoy/static/js/main.2bf66665.chunk.js",
-    "main.js.map": "/Movies_Ahoy/static/js/main.2bf66665.chunk.js.map",
-    "runtime-main.js": "/Movies_Ahoy/static/js/runtime-main.fd904f3b.js",
-    "runtime-main.js.map": "/Movies_Ahoy/static/js/runtime-main.fd904f3b.js.map",
-    "static/js/2.e89794f5.chunk.js": "/Movies_Ahoy/static/js/2.e89794f5.chunk.js",
-    "static/js/2.e89794f5.chunk.js.map": "/Movies_Ahoy/static/js/2.e89794f5.chunk.js.map",
-    "static/js/3.3072212f.chunk.js": "/Movies_Ahoy/static/js/3.3072212f.chunk.js",
-    "static/js/3.3072212f.chunk.js.map": "/Movies_Ahoy/static/js/3.3072212f.chunk.js.map",
+    "main.css": "/Movies_Ahoy/static/css/main.aac555b0.chunk.css",
+    "main.js": "/Movies_Ahoy/static/js/main.bbbc39d9.chunk.js",
+    "main.js.map": "/Movies_Ahoy/static/js/main.bbbc39d9.chunk.js.map",
+    "runtime-main.js": "/Movies_Ahoy/static/js/runtime-main.c36633a7.js",
+    "runtime-main.js.map": "/Movies_Ahoy/static/js/runtime-main.c36633a7.js.map",
+    "static/js/2.d327c1e5.chunk.js": "/Movies_Ahoy/static/js/2.d327c1e5.chunk.js",
+    "static/js/2.d327c1e5.chunk.js.map": "/Movies_Ahoy/static/js/2.d327c1e5.chunk.js.map",
+    "static/js/3.a56c1d2f.chunk.js": "/Movies_Ahoy/static/js/3.a56c1d2f.chunk.js",
+    "static/js/3.a56c1d2f.chunk.js.map": "/Movies_Ahoy/static/js/3.a56c1d2f.chunk.js.map",
     "index.html": "/Movies_Ahoy/index.html",
-    "precache-manifest.d507a3bd5cd97b96037588dae0d99338.js": "/Movies_Ahoy/precache-manifest.d507a3bd5cd97b96037588dae0d99338.js",
+    "precache-manifest.60fee21c3617ed1cdf9cd6f561518101.js": "/Movies_Ahoy/precache-manifest.60fee21c3617ed1cdf9cd6f561518101.js",
     "service-worker.js": "/Movies_Ahoy/service-worker.js",
-    "static/css/main.72c5129b.chunk.css.map": "/Movies_Ahoy/static/css/main.72c5129b.chunk.css.map",
-    "static/js/2.e89794f5.chunk.js.LICENSE.txt": "/Movies_Ahoy/static/js/2.e89794f5.chunk.js.LICENSE.txt"
+    "static/css/main.aac555b0.chunk.css.map": "/Movies_Ahoy/static/css/main.aac555b0.chunk.css.map",
+    "static/js/2.d327c1e5.chunk.js.LICENSE.txt": "/Movies_Ahoy/static/js/2.d327c1e5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.fd904f3b.js",
-    "static/js/2.e89794f5.chunk.js",
-    "static/css/main.72c5129b.chunk.css",
-    "static/js/main.2bf66665.chunk.js"
+    "static/js/runtime-main.c36633a7.js",
+    "static/js/2.d327c1e5.chunk.js",
+    "static/css/main.aac555b0.chunk.css",
+    "static/js/main.bbbc39d9.chunk.js"
   ]
 }
