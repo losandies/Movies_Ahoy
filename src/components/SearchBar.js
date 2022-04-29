@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './SearchBar.css';
 import SearchIcon from '@mui/icons-material/Search';
 
@@ -17,7 +17,7 @@ const SearchBar = ({ handleSearch, displaySearchResults }) => {
 				placeholder="Search Movies"
 				onChange={(e) => handleSearch(e.target.value)}
 			/>
-			{/* <button onClick={displaySearchResults}>Search</button> */}
+
 			<SearchIcon
 				className="search-icon"
 				color="disabled"

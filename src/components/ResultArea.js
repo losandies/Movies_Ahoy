@@ -2,7 +2,12 @@ import React from 'react';
 import SearchBar from './SearchBar';
 import './ResultArea.css';
 
-const ResultArea = ({ currentGenre, ...props }) => {
+const ResultArea = ({
+	currentGenre,
+	displaySearchResults,
+	handleSearch,
+	...props
+}) => {
 	return (
 		<div className="result-area">
 			<div className="result-header">
@@ -10,8 +15,8 @@ const ResultArea = ({ currentGenre, ...props }) => {
 				<div>
 					<SearchBar
 						className="search-bar"
-						displaySearchResults={props.displaySearchResults}
-						handleSearch={props.handleSearch}
+						displaySearchResults={displaySearchResults}
+						handleSearch={handleSearch}
 					/>
 				</div>
 			</div>

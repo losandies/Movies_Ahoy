@@ -1,7 +1,7 @@
 import './App.css';
 import Header from './components/Header';
 import Result from './components/Result';
-// import Modal from './components/Modal';
+import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import ResultArea from './components/ResultArea';
 
@@ -9,45 +9,42 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 
 function App() {
 	const [movies, setMovies] = useState([]);
-	const [searchInput, setSearchInput] = useState('spider');
-	const [genre, setGenre] = useState('');
+	const [searchInput, setSearchInput] = useState('');
+	const [genreID, setGenreID] = useState('');
 	const [genreTitle, setGenreTitle] = useState('');
-	const [showModal, setShowModal] = useState(false);
 
 	const API_SEARCH_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchInput}`;
-	const API_GENRE = `https://api.themoviedb.org/3/discover/movie?api_key=22701a046650518975b9defab51561ae&with_genres=${genre}`;
+	const API_GENRE = `https://api.themoviedb.org/3/discover/movie?api_key=22701a046650518975b9defab51561ae&with_genres=${genreID}`;
 
 	const handleSearch = (input) => {
 		setSearchInput(input);
 	};
 
-	const displaySearchResults = () => {
-		fetch(API_SEARCH_URL)
-			.then((res) => res.json())
-			.then((data) => {
-				console.log(data);
-				setMovies(data.results);
-			})
-			.catch((err) => console.log(err));
+	useEffect(() => {
+		handleGenreSelect(genreID, genreTitle);
+	}, []);
+
+	const displaySearchResults = async () => {
+		if (searchInput) {
+			try {
+				const res = await axios.get(API_SEARCH_URL);
+				setMovies(res.data.results);
+			} catch (err) {
+				console.error(err);
+			}
+		}
 	};
 
-	useEffect(() => {
-		handleGenreSelect(genre, genreTitle);
-	}, [genre, genreTitle]);
-
-	const handleGenreSelect = (genreID, genreTitle) => {
-		setGenre(genreID);
+	const handleGenreSelect = async (genreID, genreTitle) => {
+		setGenreID(genreID);
 		setGenreTitle(genreTitle);
 
-		fetch(API_GENRE)
-			.then((res) => res.json())
-			.then((data) => {
-				console.log(data);
-				setMovies(data.results);
-			})
-			.catch((err) => {
-				console.log(err);
-			});
+		try {
+			const res = await axios.get(API_GENRE);
+			setMovies(res.data.results);
+		} catch (err) {
+			console.error(err);
+		}
 	};
 
 	return (
